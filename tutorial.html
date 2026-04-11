@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Make a Friendship Bracelet — Weave & Wonder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #E8633B;
+      --coral-light: #FF7F57;
+      --turquoise: #2BBCB3;
+      --turquoise-light: #5EDBD3;
+      --yellow: #FFD166;
+      --yellow-light: #FFE4A0;
+      --pink: #FF8FA3;
+      --purple: #B388EB;
+      --cream: #FFF8F0;
+      --dark: #2D2A32;
+      --gray: #6B6773;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Baloo 2', cursive; }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--coral), var(--coral-light));
+      color: white;
+      text-align: center;
+      padding: 40px 24px 30px;
+    }
+
+    .header h1 { font-size: 2.2rem; margin-bottom: 6px; }
+    .header p { opacity: 0.9; font-size: 1.05rem; }
+
+    .header a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Main content */
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 30px 24px 60px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .intro h2 { color: var(--coral); font-size: 1.4rem; margin-bottom: 10px; }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      padding: 6px 0 6px 30px;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .checklist li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--turquoise);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* Steps */
+    .step {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .step-num {
+      display: inline-block;
+      background: var(--coral);
+      color: white;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+
+    .step p { color: var(--gray); margin-bottom: 8px; }
+
+    .step .illustration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 16px;
+      min-height: 180px;
+    }
+
+    .tip {
+      background: var(--yellow-light);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      margin-top: 8px;
+      color: var(--dark);
+    }
+
+    .tip strong { color: var(--coral); }
+
+    /* Pattern section */
+    .patterns {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .patterns h2 { color: var(--coral); font-size: 1.5rem; margin-bottom: 16px; text-align: center; }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .pattern-card {
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      background: var(--cream);
+    }
+
+    .pattern-card h4 { font-size: 1.05rem; margin: 10px 0 6px; }
+    .pattern-card p { font-size: 0.85rem; color: var(--gray); }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 30px 24px;
+      background: var(--dark);
+      color: white;
+    }
+
+    .footer a { color: var(--yellow); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 650px) {
+      .step {
+        grid-template-columns: 1fr;
+      }
+      .step .illustration { order: -1; min-height: 140px; }
+      .header h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>How to Make a Friendship Bracelet</h1>
+  <p>Your step-by-step guide from <a href="https://www.etsy.com/shop/WeaveAndWonderKits">Weave & Wonder</a></p>
+</div>
+
+<div class="container">
+
+  <!-- What's in the box -->
+  <div class="intro">
+    <h2>What's In Your Kit</h2>
+    <p>Before you start, check you have everything:</p>
+    <ul class="checklist">
+      <li><strong>1 x Tasmanian Oak base board</strong> (30cm x 6.5cm) with our logo heat-stamped on</li>
+      <li><strong>2 x Wooden dowels</strong> (13cm tall) — they slot right in!</li>
+      <li><strong>6 x Wax thread colours</strong> (4.6m each) — Starter Kit, or 12 colours in the Rainbow Kit</li>
+      <li><strong>Pattern cards</strong> with illustrated designs</li>
+      <li><strong>Scissors</strong> — the only thing you need from home!</li>
+    </ul>
+  </div>
+
+  <!-- STEP 1: Assemble -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Base board -->
+        <rect x="15" y="110" width="150" height="8" rx="3" fill="#D4A574" stroke="#8B6914" stroke-width="1.2"/>
+        <rect x="15" y="115" width="150" height="10" rx="3" fill="#C4956A" stroke="#8B6914" stroke-width="1.2"/>
+        <!-- Holes -->
+        <ellipse cx="55" cy="115" rx="5" ry="2.5" fill="#A07040"/>
+        <ellipse cx="125" cy="115" rx="5" ry="2.5" fill="#A07040"/>
+        <!-- Dowels floating above with arrow -->
+        <rect x="49" y="30" width="12" height="55" rx="6" fill="#D4A574" stroke="#8B6914" stroke-width="1" opacity="0.7"/>
+        <rect x="119" y="30" width="12" height="55" rx="6" fill="#D4A574" stroke="#8B6914" stroke-width="1" opacity="0.7"/>
+        <!-- Arrows pointing down -->
+        <line x1="55" y1="88" x2="55" y2="107" stroke="var(--coral)" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="125" y1="88" x2="125" y2="107" stroke="var(--coral)" stroke-width="2" marker-end="url(#arrow)"/>
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="var(--coral)"/>
+          </marker>
+        </defs>
+        <!-- W&W stamp -->
+        <text x="90" y="123" text-anchor="middle" font-family="Georgia" font-size="5" fill="#8B6914">W&amp;W</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">1</span>
+      <h3>Set Up Your Loom</h3>
+      <p>Take the two wooden dowels and push them into the holes on your Tasmanian Oak base board. They should stand up nice and straight — no glue needed! Place your loom on a flat surface in front of you.</p>
+      <div class="tip"><strong>Tip:</strong> The dowels should feel snug. Give them a gentle twist as you push them in.</div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Choose colours -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Thread bundles -->
+        <g transform="translate(15, 20)">
+          <rect x="0" y="10" width="40" height="100" rx="8" fill="#E8633B" opacity="0.2"/>
+          <line x1="20" y1="15" x2="20" y2="105" stroke="#E8633B" stroke-width="3"/>
+          <text x="20" y="125" text-anchor="middle" font-size="8" fill="#666">1</text>
+        </g>
+        <g transform="translate(40, 20)">
+          <rect x="0" y="10" width="40" height="100" rx="8" fill="#2BBCB3" opacity="0.2"/>
+          <line x1="20" y1="15" x2="20" y2="105" stroke="#2BBCB3" stroke-width="3"/>
+          <text x="20" y="125" text-anchor="middle" font-size="8" fill="#666">2</text>
+        </g>
+        <g transform="translate(65, 20)">
+          <rect x="0" y="10" width="40" height="100" rx="8" fill="#FFD166" opacity="0.2"/>
+          <line x1="20" y1="15" x2="20" y2="105" stroke="#FFD166" stroke-width="3"/>
+          <text x="20" y="125" text-anchor="middle" font-size="8" fill="#666">3</text>
+        </g>
+        <g transform="translate(90, 20)">
+          <rect x="0" y="10" width="40" height="100" rx="8" fill="#FF8FA3" opacity="0.2"/>
+          <line x1="20" y1="15" x2="20" y2="105" stroke="#FF8FA3" stroke-width="3"/>
+          <text x="20" y="125" text-anchor="middle" font-size="8" fill="#666">4</text>
+        </g>
+        <!-- Scissors icon -->
+        <text x="155" y="80" font-size="24" text-anchor="middle">&#9986;</text>
+        <text x="155" y="100" font-size="7" text-anchor="middle" fill="#666">60cm each</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">2</span>
+      <h3>Choose Your Colours & Cut</h3>
+      <p>Pick 3 to 6 thread colours for your bracelet. Cut each piece about <strong>60cm long</strong> (roughly from your fingertip to your opposite shoulder). Gather all your threads together and tie them in a knot at one end, leaving a 5cm tail.</p>
+      <div class="tip"><strong>Tip:</strong> Start with 3-4 colours for your first bracelet — it's easier to learn the pattern!</div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Attach to loom -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Loom base -->
+        <rect x="15" y="125" width="150" height="8" rx="3" fill="#D4A574" stroke="#8B6914" stroke-width="1"/>
+        <rect x="15" y="130" width="150" height="8" rx="3" fill="#C4956A" stroke="#8B6914" stroke-width="1"/>
+        <!-- Left dowel -->
+        <rect x="49" y="40" width="12" height="88" rx="6" fill="#C4956A" stroke="#8B6914" stroke-width="1"/>
+        <ellipse cx="55" cy="40" rx="6" ry="2.5" fill="#D4A574" stroke="#8B6914" stroke-width="0.8"/>
+        <!-- Right dowel -->
+        <rect x="119" y="40" width="12" height="88" rx="6" fill="#C4956A" stroke="#8B6914" stroke-width="1"/>
+        <ellipse cx="125" cy="40" rx="6" ry="2.5" fill="#D4A574" stroke="#8B6914" stroke-width="0.8"/>
+        <!-- Knot on left dowel -->
+        <circle cx="55" cy="55" r="5" fill="#E8633B" opacity="0.8"/>
+        <!-- Threads fanning out -->
+        <line x1="55" y1="60" x2="55" y2="85" stroke="#E8633B" stroke-width="1.5"/>
+        <line x1="55" y1="60" x2="65" y2="85" stroke="#2BBCB3" stroke-width="1.5"/>
+        <line x1="55" y1="60" x2="75" y2="85" stroke="#FFD166" stroke-width="1.5"/>
+        <line x1="55" y1="60" x2="85" y2="85" stroke="#FF8FA3" stroke-width="1.5"/>
+        <!-- Labels -->
+        <text x="70" y="20" font-size="8" fill="#666" font-family="Nunito, sans-serif">Knot loops</text>
+        <text x="70" y="30" font-size="8" fill="#666" font-family="Nunito, sans-serif">around dowel</text>
+        <line x1="67" y1="32" x2="57" y2="50" stroke="#999" stroke-width="0.5" stroke-dasharray="2"/>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">3</span>
+      <h3>Attach to Your Loom</h3>
+      <p>Loop the knotted end around one of the dowels and pull it snug. Fan out your threads so each colour is separate and easy to grab. Arrange them side by side in the order you want your pattern to go.</p>
+      <div class="tip"><strong>Tip:</strong> The order of your colours from left to right is the order of your stripes!</div>
+    </div>
+  </div>
+
+  <!-- STEP 4: The Forward Knot -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Step A: Make a "4" shape -->
+        <text x="45" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="var(--coral)">A</text>
+        <!-- Thread B (vertical, being knotted onto) -->
+        <line x1="55" y1="18" x2="55" y2="75" stroke="#2BBCB3" stroke-width="3"/>
+        <!-- Thread A (making the 4 shape) -->
+        <line x1="30" y1="18" x2="30" y2="35" stroke="#E8633B" stroke-width="3"/>
+        <line x1="30" y1="35" x2="60" y2="35" stroke="#E8633B" stroke-width="3"/>
+        <line x1="60" y1="35" x2="42" y2="55" stroke="#E8633B" stroke-width="3"/>
+        <text x="45" y="70" text-anchor="middle" font-size="7" fill="#666">Make a "4"</text>
+
+        <!-- Step B: Tuck under -->
+        <text x="135" y="12" text-anchor="middle" font-size="9" font-weight="700" fill="var(--coral)">B</text>
+        <line x1="145" y1="18" x2="145" y2="75" stroke="#2BBCB3" stroke-width="3"/>
+        <!-- Thread going under and through -->
+        <line x1="120" y1="18" x2="120" y2="35" stroke="#E8633B" stroke-width="3"/>
+        <line x1="120" y1="35" x2="150" y2="35" stroke="#E8633B" stroke-width="3"/>
+        <line x1="150" y1="35" x2="133" y2="50" stroke="#E8633B" stroke-width="3"/>
+        <!-- Loop indicator -->
+        <path d="M133,50 Q128,55 138,55 Q148,55 143,50" fill="none" stroke="#E8633B" stroke-width="2"/>
+        <text x="135" y="70" text-anchor="middle" font-size="7" fill="#666">Tuck under</text>
+
+        <!-- Step C: Pull tight -->
+        <text x="90" y="90" text-anchor="middle" font-size="9" font-weight="700" fill="var(--coral)">C</text>
+        <line x1="90" y1="95" x2="90" y2="145" stroke="#2BBCB3" stroke-width="3"/>
+        <!-- Completed knot -->
+        <circle cx="90" cy="108" r="4" fill="#E8633B" opacity="0.8"/>
+        <!-- Arrow pulling up -->
+        <line x1="75" y1="108" x2="75" y2="95" stroke="#E8633B" stroke-width="2.5"/>
+        <polygon points="71,97 79,97 75,90" fill="#E8633B"/>
+        <text x="90" y="155" text-anchor="middle" font-size="7" fill="#666">Pull tight! x2</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">4</span>
+      <h3>Make Your First Knot</h3>
+      <p>Take the thread on the <strong>far left</strong>. This is your "working thread."</p>
+      <p><strong>A.</strong> Cross it OVER the thread next to it, making a shape like the number <strong>4</strong>.</p>
+      <p><strong>B.</strong> Tuck the end under the second thread and pull it through the loop.</p>
+      <p><strong>C.</strong> Pull it tight toward the top. <strong>Do this same knot TWICE</strong> on the same thread — that's the secret to keeping it neat!</p>
+      <div class="tip"><strong>Remember:</strong> Over, under, pull — that's all a forward knot is! Always do it twice.</div>
+    </div>
+  </div>
+
+  <!-- STEP 5: Work across -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Four vertical threads -->
+        <line x1="40" y1="20" x2="40" y2="140" stroke="#2BBCB3" stroke-width="2.5"/>
+        <line x1="70" y1="20" x2="70" y2="140" stroke="#FFD166" stroke-width="2.5"/>
+        <line x1="100" y1="20" x2="100" y2="140" stroke="#FF8FA3" stroke-width="2.5"/>
+        <line x1="130" y1="20" x2="130" y2="140" stroke="#B388EB" stroke-width="2.5"/>
+        <!-- Working thread moving across (coral) -->
+        <circle cx="40" cy="50" r="4" fill="#E8633B"/>
+        <path d="M40,50 Q55,40 70,50" fill="none" stroke="#E8633B" stroke-width="2" stroke-dasharray="3"/>
+        <circle cx="70" cy="70" r="4" fill="#E8633B"/>
+        <path d="M70,70 Q85,60 100,70" fill="none" stroke="#E8633B" stroke-width="2" stroke-dasharray="3"/>
+        <circle cx="100" cy="90" r="4" fill="#E8633B"/>
+        <path d="M100,90 Q115,80 130,90" fill="none" stroke="#E8633B" stroke-width="2" stroke-dasharray="3"/>
+        <circle cx="130" cy="110" r="4" fill="#E8633B"/>
+        <!-- Arrow showing direction -->
+        <text x="90" y="15" text-anchor="middle" font-size="8" fill="var(--coral)" font-weight="700">Left to Right &#8594;</text>
+        <text x="90" y="155" text-anchor="middle" font-size="7" fill="#666">Knot on each thread = 1 row</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">5</span>
+      <h3>Work Across the Row</h3>
+      <p>Using that same first thread (your working thread), make your <strong>double-knot on the next thread</strong>, and the next, all the way across until you reach the other side.</p>
+      <p>You've just completed <strong>one row!</strong> The thread that started on the left is now on the far right.</p>
+      <div class="tip"><strong>Tip:</strong> Keep your tension even — not too tight, not too loose. The knots should sit neatly in a line.</div>
+    </div>
+  </div>
+
+  <!-- STEP 6: Repeat rows -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Diagonal stripe pattern forming -->
+        <rect x="30" y="10" width="120" height="140" rx="6" fill="white" stroke="#ddd" stroke-width="1"/>
+        <!-- Row 1 - coral -->
+        <rect x="35" y="15" width="110" height="12" rx="2" fill="#E8633B" opacity="0.8"/>
+        <!-- Row 2 - turquoise -->
+        <rect x="35" y="30" width="110" height="12" rx="2" fill="#2BBCB3" opacity="0.8"/>
+        <!-- Row 3 - yellow -->
+        <rect x="35" y="45" width="110" height="12" rx="2" fill="#FFD166" opacity="0.8"/>
+        <!-- Row 4 - pink -->
+        <rect x="35" y="60" width="110" height="12" rx="2" fill="#FF8FA3" opacity="0.8"/>
+        <!-- Row 5 - coral again -->
+        <rect x="35" y="75" width="110" height="12" rx="2" fill="#E8633B" opacity="0.8"/>
+        <!-- Row 6 - turquoise -->
+        <rect x="35" y="90" width="110" height="12" rx="2" fill="#2BBCB3" opacity="0.8"/>
+        <!-- In progress... -->
+        <rect x="35" y="105" width="60" height="12" rx="2" fill="#FFD166" opacity="0.5"/>
+        <text x="110" y="115" font-size="9" fill="#999">...</text>
+        <!-- Arrow showing repeat cycle -->
+        <text x="90" y="145" text-anchor="middle" font-size="7" fill="#666">Pattern repeats!</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">6</span>
+      <h3>Keep Going — Row After Row</h3>
+      <p>Now pick up whichever thread is on the <strong>far left</strong> again and repeat! Double-knot across every thread, left to right.</p>
+      <p>Each row creates a beautiful <strong>diagonal stripe</strong> of colour. You'll start to see your pattern forming after just 3-4 rows.</p>
+      <div class="tip"><strong>Tip:</strong> If you make a mistake, don't worry! You can gently undo the last knot with a pin or needle. Everyone makes mistakes when learning.</div>
+    </div>
+  </div>
+
+  <!-- STEP 7: Use the loom -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Loom with bracelet wrapped -->
+        <rect x="15" y="125" width="150" height="8" rx="3" fill="#D4A574" stroke="#8B6914" stroke-width="1"/>
+        <rect x="15" y="130" width="150" height="8" rx="3" fill="#C4956A" stroke="#8B6914" stroke-width="1"/>
+        <!-- Dowels -->
+        <rect x="49" y="30" width="12" height="98" rx="6" fill="#C4956A" stroke="#8B6914" stroke-width="1"/>
+        <ellipse cx="55" cy="30" rx="6" ry="2.5" fill="#D4A574" stroke="#8B6914" stroke-width="0.8"/>
+        <rect x="119" y="30" width="12" height="98" rx="6" fill="#C4956A" stroke="#8B6914" stroke-width="1"/>
+        <ellipse cx="125" cy="30" rx="6" ry="2.5" fill="#D4A574" stroke="#8B6914" stroke-width="0.8"/>
+        <!-- Bracelet wrapping around dowels -->
+        <path d="M55,45 L125,55" stroke="#E8633B" stroke-width="2" fill="none"/>
+        <path d="M55,52 L125,62" stroke="#2BBCB3" stroke-width="2" fill="none"/>
+        <path d="M55,59 L125,69" stroke="#FFD166" stroke-width="2" fill="none"/>
+        <path d="M55,66 L125,76" stroke="#FF8FA3" stroke-width="2" fill="none"/>
+        <path d="M55,73 L125,83" stroke="#E8633B" stroke-width="2" fill="none"/>
+        <path d="M55,80 L125,90" stroke="#2BBCB3" stroke-width="2" fill="none"/>
+        <!-- Circular arrow showing wrapping -->
+        <path d="M130,60 Q145,70 130,80" fill="none" stroke="var(--coral)" stroke-width="1.5" stroke-dasharray="3"/>
+        <text x="148" y="73" font-size="7" fill="var(--coral)">wrap</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">7</span>
+      <h3>Use Your Loom</h3>
+      <p>As your bracelet gets longer, use the second dowel to hold it taut. Wrap your growing bracelet around the dowels to keep the tension even and give yourself room to keep knotting.</p>
+      <p>The loom makes this <strong>so much easier</strong> than holding it by hand!</p>
+    </div>
+  </div>
+
+  <!-- STEP 8: Finish -->
+  <div class="step">
+    <div class="illustration">
+      <svg viewBox="0 0 180 160" width="180" height="160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Finished bracelet shape (curved band) -->
+        <path d="M30,80 Q90,40 150,80 Q90,120 30,80 Z" fill="none" stroke="#ddd" stroke-width="1"/>
+        <!-- Colorful stripe pattern on bracelet -->
+        <path d="M35,77 Q90,45 145,77" fill="none" stroke="#E8633B" stroke-width="3"/>
+        <path d="M35,80 Q90,48 145,80" fill="none" stroke="#2BBCB3" stroke-width="3"/>
+        <path d="M35,83 Q90,51 145,83" fill="none" stroke="#FFD166" stroke-width="3"/>
+        <path d="M35,86 Q90,54 145,86" fill="none" stroke="#FF8FA3" stroke-width="3"/>
+        <!-- Knot at closure -->
+        <circle cx="30" cy="81" r="5" fill="#E8633B" opacity="0.7"/>
+        <!-- Braided tails -->
+        <path d="M25,81 Q15,75 10,65" fill="none" stroke="#E8633B" stroke-width="1.5"/>
+        <path d="M25,81 Q18,78 12,70" fill="none" stroke="#2BBCB3" stroke-width="1.5"/>
+        <!-- Wrist label -->
+        <text x="90" y="105" text-anchor="middle" font-size="8" fill="#666">15-18cm around wrist</text>
+        <!-- Little heart -->
+        <text x="90" y="135" text-anchor="middle" font-size="22">&#128155;</text>
+      </svg>
+    </div>
+    <div>
+      <span class="step-num">8</span>
+      <h3>Finish & Tie Off</h3>
+      <p>When your bracelet is long enough to wrap around your wrist (usually about <strong>15-18cm</strong>), carefully remove it from the loom. Tie all the threads together in a tight knot.</p>
+      <p>Trim the ends to about 3cm and plait them into a little braid for a neat finish. <strong>Tie it on a friend's wrist and make their day!</strong></p>
+      <div class="tip"><strong>Tip:</strong> Measure against your wrist as you go — make it a little longer since you need room for the knot!</div>
+    </div>
+  </div>
+
+  <!-- Bonus Patterns -->
+  <div class="patterns">
+    <h2>Try These Patterns!</h2>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <svg viewBox="0 0 120 80" width="120" height="80" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="5" width="100" height="70" rx="4" fill="white" stroke="#eee"/>
+          <rect x="15" y="10" width="90" height="8" rx="1" fill="#E8633B" opacity="0.8"/>
+          <rect x="15" y="21" width="90" height="8" rx="1" fill="#2BBCB3" opacity="0.8"/>
+          <rect x="15" y="32" width="90" height="8" rx="1" fill="#FFD166" opacity="0.8"/>
+          <rect x="15" y="43" width="90" height="8" rx="1" fill="#E8633B" opacity="0.8"/>
+          <rect x="15" y="54" width="90" height="8" rx="1" fill="#2BBCB3" opacity="0.8"/>
+          <rect x="15" y="65" width="90" height="8" rx="1" fill="#FFD166" opacity="0.8"/>
+        </svg>
+        <h4>Candy Stripe</h4>
+        <p>The classic! Use 3-4 colours and knot left to right. The easiest pattern to start with.</p>
+      </div>
+      <div class="pattern-card">
+        <svg viewBox="0 0 120 80" width="120" height="80" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="5" width="100" height="70" rx="4" fill="white" stroke="#eee"/>
+          <!-- Chevron/V pattern -->
+          <path d="M60,12 L30,22 L60,32 L90,22 Z" fill="#E8633B" opacity="0.7"/>
+          <path d="M60,24 L30,34 L60,44 L90,34 Z" fill="#2BBCB3" opacity="0.7"/>
+          <path d="M60,36 L30,46 L60,56 L90,46 Z" fill="#FF8FA3" opacity="0.7"/>
+          <path d="M60,48 L30,58 L60,68 L90,58 Z" fill="#B388EB" opacity="0.7"/>
+        </svg>
+        <h4>Chevron</h4>
+        <p>Mirror your threads and knot from the outside in. Creates beautiful V shapes!</p>
+      </div>
+      <div class="pattern-card">
+        <svg viewBox="0 0 120 80" width="120" height="80" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="5" width="100" height="70" rx="4" fill="white" stroke="#eee"/>
+          <!-- Diamond pattern -->
+          <path d="M60,10 L40,25 L60,40 L80,25 Z" fill="#FFD166" opacity="0.7" stroke="#FFD166" stroke-width="0.5"/>
+          <path d="M60,30 L40,45 L60,60 L80,45 Z" fill="#E8633B" opacity="0.7" stroke="#E8633B" stroke-width="0.5"/>
+          <path d="M35,15 L20,30 L35,45 L50,30 Z" fill="#2BBCB3" opacity="0.4"/>
+          <path d="M85,15 L70,30 L85,45 L100,30 Z" fill="#2BBCB3" opacity="0.4"/>
+        </svg>
+        <h4>Diamond</h4>
+        <p>Combine forward and backward knots to create diamond shapes. Intermediate level!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Troubleshooting -->
+  <div class="intro">
+    <h2>Troubleshooting</h2>
+    <p><strong>My bracelet is twisting!</strong> — Make sure you're always knotting in the same direction (left to right) and doing each knot twice.</p>
+    <p><strong>My knots look uneven!</strong> — Practice makes perfect! Keep your tension consistent and pull each knot to the same tightness.</p>
+    <p><strong>I ran out of thread!</strong> — You can tie a new piece to the end of the short thread with a small knot. Tuck the ends behind your work.</p>
+    <p><strong>I made a mistake!</strong> — Use a pin or needle to gently loosen the knot and undo it. Take your time!</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Made with love by Bethany & Ella</p>
+  <p><a href="https://www.etsy.com/shop/WeaveAndWonderKits">Shop on Etsy</a></p>
+  <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.7;">Weave & Wonder &copy; 2026</p>
+</div>
+
+</body>
+</html>
