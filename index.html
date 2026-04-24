@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weave & Wonder — Handmade Friendship Bracelet Kits</title>
+  <meta name="description" content="Screen-free fun for kids! Handmade friendship bracelet kits by Bethany (12) & Ella (10) from Coomba Park, Australia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #E8633B;
+      --teal: #2BBCB3;
+      --yellow: #FFD166;
+      --pink: #FF8FA3;
+      --purple: #B388EB;
+      --dark: #2D3436;
+      --light: #FFF9F0;
+      --wood: #C4956A;
+      --wood-dark: #8B6914;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Quicksand', sans-serif; color: var(--dark); background: var(--light); }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav {
+      background: white; padding: 15px 30px; display: flex; justify-content: space-between;
+      align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--coral); }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--coral); }
+    @media (max-width: 700px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--coral), #FF8FA3, var(--purple));
+      color: white; text-align: center; padding: 80px 20px 60px;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px; opacity: 0.95; }
+    .btn {
+      display: inline-block; padding: 14px 32px; border-radius: 50px; font-weight: 700;
+      font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .btn-white { background: white; color: var(--coral); }
+    .btn-coral { background: var(--coral); color: white; }
+    .btn-teal { background: var(--teal); color: white; }
+    .hero-badges { margin-top: 25px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,255,255,0.2); padding: 8px 18px; border-radius: 50px;
+      font-size: 0.85rem; font-weight: 600; backdrop-filter: blur(5px);
+    }
+    @media (max-width: 600px) { .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; } }
+
+    /* SECTIONS */
+    .section { padding: 70px 20px; max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-family: 'Playfair Display', serif; font-size: 2.2rem; text-align: center;
+      margin-bottom: 10px; color: var(--dark);
+    }
+    .section-sub { text-align: center; color: #666; font-size: 1.05rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+    /* STORY */
+    .story { background: white; }
+    .story-content { max-width: 750px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: #444; }
+    .story-content p { margin-bottom: 15px; }
+    .story-highlight {
+      background: linear-gradient(135deg, #FFF3E0, #FFF9F0); border-left: 4px solid var(--coral);
+      padding: 20px 25px; border-radius: 0 12px 12px 0; margin: 25px 0; font-weight: 500;
+    }
+
+    /* VIDEO */
+    .video-section { background: linear-gradient(135deg, #2D3436, #3d4749); color: white; padding: 70px 20px; }
+    .video-section .section-title { color: white; }
+    .video-section .section-sub { color: rgba(255,255,255,0.8); }
+    .video-wrapper {
+      max-width: 800px; margin: 0 auto; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.4); aspect-ratio: 16/9;
+    }
+    .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+    /* PRODUCTS */
+    .products { background: var(--light); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .product-card {
+      background: white; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s;
+    }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-icon {
+      height: 180px; display: flex; align-items: center; justify-content: center; font-size: 4rem;
+    }
+    .product-info { padding: 25px; }
+    .product-info h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .product-info p { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; }
+    .price { font-size: 1.5rem; font-weight: 700; color: var(--coral); }
+    .product-actions { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+
+    /* DEAL BANNER */
+    .deal-banner {
+      background: linear-gradient(135deg, var(--teal), #1a9e96); color: white;
+      text-align: center; padding: 40px 20px; font-size: 1.2rem;
+    }
+    .deal-banner h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 10px; }
+
+    /* HOW IT WORKS */
+    .how { background: white; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .step { text-align: center; padding: 20px; }
+    .step-num {
+      width: 50px; height: 50px; border-radius: 50%; background: var(--coral); color: white;
+      display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.3rem;
+      margin: 0 auto 15px;
+    }
+    .step h4 { margin-bottom: 8px; font-size: 1.1rem; }
+    .step p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+
+    /* KIT SPECS */
+    .specs { background: var(--light); }
+    .spec-list { max-width: 700px; margin: 0 auto; }
+    .spec-item {
+      display: flex; gap: 15px; align-items: flex-start; padding: 15px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .spec-icon { font-size: 1.4rem; color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+    .spec-item p { color: #555; line-height: 1.6; }
+
+    /* KEYRINGS */
+    .keyrings {
+      background: linear-gradient(135deg, var(--purple), #9b6dd7); color: white;
+      text-align: center; padding: 60px 20px;
+    }
+    .keyrings h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 10px; }
+    .keyrings p { max-width: 600px; margin: 0 auto 20px; opacity: 0.9; font-size: 1.05rem; }
+    .keyring-price { font-size: 2.5rem; font-weight: 700; }
+
+    /* FAQ */
+    .faq { background: white; }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #eee; }
+    .faq-q {
+      width: 100%; background: none; border: none; padding: 20px 0; text-align: left;
+      font-size: 1.05rem; font-weight: 600; cursor: pointer; display: flex;
+      justify-content: space-between; align-items: center; font-family: inherit; color: var(--dark);
+    }
+    .faq-q:hover { color: var(--coral); }
+    .faq-a { display: none; padding: 0 0 20px; color: #666; line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .toggle { transform: rotate(45deg); }
+    .toggle { font-size: 1.4rem; transition: transform 0.3s; color: var(--coral); }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--coral), #FF8FA3); color: white;
+      text-align: center; padding: 70px 20px;
+    }
+    .cta h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 15px; }
+    .cta p { max-width: 600px; margin: 0 auto 25px; font-size: 1.1rem; opacity: 0.95; }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 50px 20px 30px; }
+    .footer-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+    .footer-grid h4 { color: white; margin-bottom: 15px; }
+    .footer-grid ul { list-style: none; }
+    .footer-grid li { margin-bottom: 8px; }
+    .footer-grid a:hover { color: var(--yellow); }
+    .footer-brand p { line-height: 1.7; margin-top: 10px; }
+    .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
+    @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Weave <span>&</span> Wonder</a>
+    <div class="nav-links">
+      <a href="#story">Our Story</a>
+      <a href="#video">Watch & Learn</a>
+      <a href="#products">Shop Kits</a>
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-coral" style="padding:8px 20px;font-size:0.85rem;">Shop on Etsy</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Weave & Wonder</h1>
+    <p>Handmade friendship bracelet kits by two sisters from Coomba Park, Australia. Screen-free fun that brings kids together — one bracelet at a time.</p>
+    <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-white">Shop Our Kits on Etsy</a>
+    <div class="hero-badges">
+      <span class="badge">&#127795; Tasmanian Oak Loom</span>
+      <span class="badge">&#9996;&#65039; Handmade in Australia</span>
+      <span class="badge">&#127902; Screen-Free Fun</span>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="story" id="story">
+    <div class="section">
+      <h2 class="section-title">Our Story</h2>
+      <p class="section-sub">Two sisters, one big dream.</p>
+      <div class="story-content">
+        <p>Hi! We're <strong>Bethany (12)</strong> and <strong>Ella (10)</strong>, two sisters from <strong>Coomba Park</strong> on the beautiful Mid North Coast of New South Wales, Australia.</p>
+        <p>While travelling in <strong>Guatemala</strong>, we fell in love with the art of making friendship bracelets. The colours, the patterns, the joy of creating something with your own hands — it was magic. We knew we had to share it with kids back home.</p>
+        <p>That's how <strong>Weave & Wonder</strong> was born. We design and make every kit ourselves, using beautiful Tasmanian Oak for our looms and premium wax thread in vibrant colours. We want to give kids a <strong>fun, creative way to spend time away from screens</strong> — making something real that they can share with the people they love.</p>
+        <div class="story-highlight">
+          &#127471;&#127477; <strong>Our Big Goal:</strong> Every kit you buy helps us attend a leadership program in Japan, where we'll learn about business, creativity, and global citizenship. Thank you for being part of our journey!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO TUTORIAL -->
+  <section class="video-section" id="video">
+    <h2 class="section-title">Watch How It's Done!</h2>
+    <p class="section-sub">Follow along with our step-by-step tutorial and make your first friendship bracelet.</p>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/jhEaeKCjkqk"
+        title="How to Make a Friendship Bracelet — Weave &amp; Wonder"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="section">
+      <h2 class="section-title">Our Kits</h2>
+      <p class="section-sub">Everything you need to start making friendship bracelets — all in one box.</p>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-icon" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">&#127800;</div>
+          <div class="product-info">
+            <h3>Starter Kit</h3>
+            <p>Perfect for beginners! Includes a Tasmanian Oak wooden loom, 6 vibrant wax thread colours (4.6m each), and illustrated step-by-step instructions. Makes 3+ bracelets!</p>
+            <div class="product-actions">
+              <span class="price">$29.95</span>
+              <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-coral" style="padding:10px 20px;font-size:0.85rem;">Order on Etsy</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">&#127752;</div>
+          <div class="product-info">
+            <h3>Extended Kit</h3>
+            <p>Extra thread to make more bracelets! Includes a Tasmanian Oak wooden loom, 12 wax thread colours (4.6m each), bonus patterns, and a colour mixing guide. Makes 6+ bracelets!</p>
+            <div class="product-actions">
+              <span class="price">$39.95</span>
+              <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-coral" style="padding:10px 20px;font-size:0.85rem;">Order on Etsy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEAL BANNER -->
+  <section class="deal-banner">
+    <h2>&#127881; Special Deal!</h2>
+    <p>Grab <strong>2 Starter Kits for just $50</strong> — perfect for making bracelets with a friend!</p>
+    <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-white" style="margin-top:15px;">Shop the Deal on Etsy</a>
+  </section>
+
+  <!-- KEYRINGS -->
+  <section class="keyrings">
+    <h2>&#128150; Support the Cause</h2>
+    <p>Love what we're doing? Grab a handmade macrame keyring! Each one is made by us with love — a little way to support our journey to Japan.</p>
+    <div class="keyring-price">$5 each</div>
+    <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-white" style="margin-top:20px;">Get a Keyring on Etsy</a>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="section">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">From our hands to yours in four easy steps.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Order Your Kit</h4>
+          <p>Pick the perfect kit and place your order on Etsy. We'll get it ready for you!</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>We Ship It</h4>
+          <p>Your kit is posted via Australia Post. It arrives flat-packed and ready to assemble.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Pop It Together</h4>
+          <p>Slot the two dowels into the wooden base — done! Your loom is ready in seconds.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Start Weaving!</h4>
+          <p>Follow the included instructions (or watch our video!) and create your first bracelet. Share it with someone you love!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KIT SPECS -->
+  <section class="specs" id="specs">
+    <div class="section">
+      <h2 class="section-title">What's in the Kit?</h2>
+      <p class="section-sub">Each kit comes with a hand-stamped Tasmanian Oak loom and everything you need to get started.</p>
+      <div class="spec-list">
+        <div class="spec-item">
+          <span class="spec-icon">&#10003;</span>
+          <p><strong>Tasmanian Oak Base Board</strong> — 30cm x 6.5cm, sanded smooth. Heat-stamped with the Weave & Wonder logo.</p>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">&#10003;</span>
+          <p><strong>2 x Wooden Dowels</strong> — 13cm tall. Slot into pre-drilled holes for quick assembly (no glue needed!).</p>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">&#10003;</span>
+          <p><strong>Wax Thread</strong> — 6 colours of premium wax thread (4.6m per colour). Extended Kit includes 12 colours! Enough to make multiple bracelets.</p>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">&#10003;</span>
+          <p><strong>Illustrated Instructions</strong> — Step-by-step guide to making your first bracelet, from setup to finish.</p>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">&#10003;</span>
+          <p><strong>Ships Flat-Packed</strong> — Assembles in seconds. Fits in an Australia Post small satchel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <h2 class="section-title">What People Are Saying</h2>
+    <p class="section-sub">Happy crafters and gift-givers share their experience.</p>
+    <div class="product-grid">
+      <div style="background:white;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="color:var(--yellow);font-size:1.3rem;margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="color:#555;line-height:1.7;margin-bottom:15px;">"Bought this for my daughter's 9th birthday and she hasn't put it down! Such a clever, screen-free activity."</p>
+        <p style="font-weight:600;color:var(--coral);">— Sarah M., Melbourne</p>
+      </div>
+      <div style="background:white;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="color:var(--yellow);font-size:1.3rem;margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="color:#555;line-height:1.7;margin-bottom:15px;">"The wooden loom is such great quality and the instructions are so easy to follow. My kids made bracelets for all their friends!"</p>
+        <p style="font-weight:600;color:var(--coral);">— James K., Brisbane</p>
+      </div>
+      <div style="background:white;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="color:var(--yellow);font-size:1.3rem;margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="color:#555;line-height:1.7;margin-bottom:15px;">"Love that it's run by two young girls with such a great mission. The video tutorial made it so easy to get started!"</p>
+        <p style="font-weight:600;color:var(--coral);">— Michelle T., Sydney</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Got questions? We've got answers!</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            What age are the kits suitable for? <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">Our kits are designed for kids aged 6 and up, but younger crafters can join in with a little help from a grown-up! Adults love them too — they're a great mindful activity for all ages.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            How long does shipping take? <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">We ship via Australia Post for a flat rate of $12. Orders over $55 receive FREE shipping! Most orders arrive within 3-7 business days depending on your location within Australia.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            Do I need any extra tools? <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">Nope! Everything you need is included in the kit. Just open it up, slot the dowels into the base, and you're ready to start weaving. You might want a pair of scissors to cut your thread, but that's it!</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            What is the money being raised for? <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">Every purchase helps us (Bethany, 12, and Ella, 10) attend a leadership program in Japan. We're learning about business, creativity, and global citizenship — and your support means the world to us!</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            Do you ship outside Australia? <span class="toggle">+</span>
+          </button>
+          <div class="faq-a">At the moment we only ship within Australia via Australia Post. We're hoping to expand to international shipping in the future — stay tuned!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Get Crafting?</h2>
+    <p>Give the gift of creativity. Order a Weave & Wonder kit today and help two sisters reach Japan!</p>
+    <a href="https://www.etsy.com/shop/WeaveAndWonderKits" target="_blank" class="btn btn-white">Shop on Etsy</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">Weave <span>&</span> Wonder</a>
+        <p><strong style="color:var(--yellow);">Screen-Free Fun For Kids!</strong><br>Handmade friendship bracelet kits by Bethany & Ella. Born in Guatemala, made in Australia, dreaming of Japan.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#video">Watch & Learn</a></li>
+          <li><a href="#products">Shop Kits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:weaveandwonder@email.com">weaveandwonder@email.com</a></li>
+          <li><a href="#">@weaveandwonder</a></li>
+          <li><a href="tutorial.html">Full Tutorial</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Weave & Wonder. Made with love by Bethany & Ella. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
